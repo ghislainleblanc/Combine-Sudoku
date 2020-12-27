@@ -38,4 +38,22 @@ class SudokuTests: XCTestCase {
             XCTAssert(array.count == 9)
         }
     }
+
+    func testSquares() {
+        let grid = SudokuGenerator.generate()
+
+        [0, 3, 6].forEach { (row) in
+            [0, 3, 6].forEach { (col) in
+                var digits = Set<Int>()
+
+                for i in 0...2 {
+                    for j in 0...2 {
+                        digits.insert(grid[i + row][j + col])
+                    }
+                }
+
+                XCTAssert(digits.count == 1)
+            }
+        }
+    }
 }
