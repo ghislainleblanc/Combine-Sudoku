@@ -30,4 +30,12 @@ class SudokuTests: XCTestCase {
         }
     }
 
+    func testGridSize() {
+        let grid = SudokuGenerator.generate()
+        XCTAssert(grid.count == 9)
+
+        grid.forEach { (array) in
+            XCTAssert(array.count == 9)
+        }
+    }
 }

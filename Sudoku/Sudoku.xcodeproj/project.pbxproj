@@ -15,6 +15,8 @@
 		85769B3425991D7E00FDA692 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85769B3225991D7E00FDA692 /* LaunchScreen.storyboard */; };
 		85769B3F25991D7F00FDA692 /* SudokuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85769B3E25991D7F00FDA692 /* SudokuTests.swift */; };
 		85769B4A25991D7F00FDA692 /* SudokuUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85769B4925991D7F00FDA692 /* SudokuUITests.swift */; };
+		8592916425993EEE0048DCB6 /* SudokuGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592916325993EEE0048DCB6 /* SudokuGenerator.swift */; };
+		8592916525993EEE0048DCB6 /* SudokuGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8592916325993EEE0048DCB6 /* SudokuGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		85769B4525991D7F00FDA692 /* SudokuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SudokuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85769B4925991D7F00FDA692 /* SudokuUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuUITests.swift; sourceTree = "<group>"; };
 		85769B4B25991D7F00FDA692 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8592916325993EEE0048DCB6 /* SudokuGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SudokuGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,7 @@
 				85769B3025991D7E00FDA692 /* Assets.xcassets */,
 				85769B3225991D7E00FDA692 /* LaunchScreen.storyboard */,
 				85769B3525991D7E00FDA692 /* Info.plist */,
+				8592916325993EEE0048DCB6 /* SudokuGenerator.swift */,
 			);
 			path = Sudoku;
 			sourceTree = "<group>";
@@ -260,6 +264,7 @@
 			files = (
 				85769B2C25991D7E00FDA692 /* ViewController.swift in Sources */,
 				85769B2825991D7E00FDA692 /* AppDelegate.swift in Sources */,
+				8592916425993EEE0048DCB6 /* SudokuGenerator.swift in Sources */,
 				85769B2A25991D7E00FDA692 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8592916525993EEE0048DCB6 /* SudokuGenerator.swift in Sources */,
 				85769B3F25991D7F00FDA692 /* SudokuTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
