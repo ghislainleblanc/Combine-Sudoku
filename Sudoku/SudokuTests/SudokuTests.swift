@@ -31,7 +31,7 @@ class SudokuTests: XCTestCase {
     }
 
     func testGridSize() {
-        let grid = SudokuGenerator.generate()
+        let grid = SudokuGenerator.generateSample()
         XCTAssert(grid.count == 9)
 
         grid.forEach { (array) in
@@ -40,7 +40,7 @@ class SudokuTests: XCTestCase {
     }
 
     func testSquares() {
-        let grid = SudokuGenerator.generate()
+        let grid = SudokuGenerator.generateSample()
 
         [0, 3, 6].forEach { (row) in
             [0, 3, 6].forEach { (col) in
@@ -58,7 +58,7 @@ class SudokuTests: XCTestCase {
     }
 
     func testRowsAndColumns() {
-        let grid = SudokuGenerator.generate()
+        let grid = SudokuGenerator.generateSample()
         for i in 0...8 {
             var rowDigits = Set<Int>()
             var columnDigits = Set<Int>()
