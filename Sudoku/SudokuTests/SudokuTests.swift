@@ -48,12 +48,26 @@ class SudokuTests: XCTestCase {
 
                 for i in 0...2 {
                     for j in 0...2 {
-                        digits.insert(grid[i + row][j + col])
+                        digits.insert(grid[i + col][j + row])
                     }
                 }
 
-                XCTAssert(digits.count == 1)
+                XCTAssert(digits.count == 9)
             }
+        }
+    }
+
+    func testRowsAndColumns() {
+        let grid = SudokuGenerator.generate()
+        for i in 0...8 {
+            var rowDigits = Set<Int>()
+            var columnDigits = Set<Int>()
+            for j in 0...8 {
+                rowDigits.insert(grid[i][j])
+                columnDigits.insert(grid[j][i])
+            }
+            XCTAssert(rowDigits.count == 9)
+            XCTAssert(columnDigits.count == 9)
         }
     }
 }

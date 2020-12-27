@@ -14,7 +14,7 @@ struct SudokuGenerator {
         for _ in 0...8 {
             var row = Array<Int>()
             for _ in 0...8 {
-                row.append(0)
+                row.append(-1)
             }
             grid.append(row)
         }
