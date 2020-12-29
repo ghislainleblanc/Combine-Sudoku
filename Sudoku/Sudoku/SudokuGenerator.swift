@@ -7,9 +7,11 @@
 
 import Foundation
 
+typealias Matrix = Array<Array<Int>>
+
 struct SudokuGenerator {
-    static func generate() -> Array<Array<Int>> {
-        var grid = Array<Array<Int>>()
+    static func generate() -> Matrix {
+        var grid = Matrix()
 
         for _ in 0...8 {
             var row = Array<Int>()
@@ -22,7 +24,7 @@ struct SudokuGenerator {
         return grid
     }
 
-    static func generateSample() -> Array<Array<Int>> {
+    static func generateSample() -> Matrix {
         return [
             [1, 2, 3,/**/ 4, 5, 6,/**/ 7, 8, 9],
             [4, 5, 6,/**/ 7, 8, 9,/**/ 1, 2, 3],
