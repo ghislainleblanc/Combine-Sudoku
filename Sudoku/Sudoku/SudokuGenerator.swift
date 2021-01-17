@@ -11,20 +11,36 @@ typealias Matrix = Array<Array<Int>>
 
 struct SudokuGenerator {
     static func generate() -> Matrix {
-        var matrix = Matrix()
+        var matrix = SudokuGenerator.generateSample()
 
         repeat {
-            matrix = Matrix()
-            for _ in 0...8 {
-                var row = Array<Int>()
-                for _ in 0...8 {
-                    row.append(Int.random(in: 1..<9))
+            for j in stride(from: 0, through: 6, by: 3) {
+                for i in 0...2 {
+                    SudokuGenerator.permutateRow(from: i, to: Int.random(in: (j + i)..<j + 3), matrix: &matrix)
+                    SudokuGenerator.permutateColumn(from: i, to: Int.random(in: (j + i)..<j + 3), matrix: &matrix)
                 }
-                matrix.append(row)
             }
-        } while SudokuGenerator.isValid(matrix: matrix) == false
+        } while !SudokuGenerator.isValid(matrix: matrix)
+
+        matrix.printOut()
 
         return matrix
+    }
+
+    private static func permutateRow(from: Int, to: Int, matrix: inout Matrix) {
+        for i in 0...8 {
+            let temp = matrix[from][i]
+            matrix[from][i] = matrix[to][i]
+            matrix[to][i] = temp
+        }
+    }
+
+    private static func permutateColumn(from: Int, to: Int, matrix: inout Matrix) {
+        for i in 0...8 {
+            let temp = matrix[i][from]
+            matrix[i][from] = matrix[i][to]
+            matrix[i][to] = temp
+        }
     }
 
     private static func isValid(matrix: Matrix) -> Bool {
@@ -68,6 +84,7 @@ struct SudokuGenerator {
                 }
 
                 if digits.count != 9 {
+                    print("Repeat in square (\(i), \(j))...")
                     return false
                 }
             }
@@ -85,9 +102,19 @@ struct SudokuGenerator {
                 columnDigits.insert(matrix[j][i])
             }
             if rowDigits.count != 9 || columnDigits.count != 9 {
+                print("Repeat in rows and columns...")
                 return false
             }
         }
         return true
+    }
+}
+
+extension Matrix {
+    func printOut() {
+        self.forEach {
+            print($0)
+        }
+        print()
     }
 }
